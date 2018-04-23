@@ -1,0 +1,26 @@
+<div class="wrapper">
+	<div class="jumbotron">
+		<h1 class="display-4">Pet Shelter</h1>
+		<h4 class="lead">These pets are looking for a home!</h4>
+		<br>
+		<a class="btn btn-link" [routerLink]="['/add_pet']">Add a pet to the shelter</a>
+	</div>
+	<div *ngIf="pets">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th scope="col" class= "table_header col-md-4">Name</th>
+					<th scope="col" class= "table_header col-md-4">Type</th>
+					<th scope="col" class= "table_header col-md-4">Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let pet of pets">
+					<td>{{pet.name}}</td>
+					<td>{{pet.type}}</td>
+					<td><button class="btn btn-primary" [routerLink]="['/details/'+pet._id]">Details</button> <button class="btn btn-secondary" [routerLink]="['/edit/'+pet._id]">Edit</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

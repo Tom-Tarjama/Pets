@@ -1,0 +1,29 @@
+<div class="wrapper">
+	<div class="jumbotron">
+		<h1 class="display-4">Pet Shelter</h1>
+	</div>
+	<br>
+	<div class="header">
+		<h4 id="header_1" class="lead">Details about {{pet.name}}</h4>
+		<a id="header_2" class="btn btn-link" [routerLink]="['/home']">Home</a>
+	</div>
+	<br>
+	<div class="rounded">
+		<h4 class="lead">Pet type: {{pet.type}}</h4>
+		<br>
+		<h4 class="lead">Description: {{pet.description}}</h4>
+		<br>
+		<div *ngIf="pet.skill_1 || pet.skill_2 || pet.skill_3"><h4 class="lead" >Skills:</h4></div>
+		<div class="lead" *ngIf="pet.skill_1"><p>- {{pet.skill_1}}</p></div>
+		<div class="lead" *ngIf="pet.skill_2"><p>- {{pet.skill_2}}</p></div>
+		<div class="lead" *ngIf="pet.skill_3"><p>- {{pet.skill_3}}</p></div>
+		<h4 class="lead">Likes: {{pet.likes}}</h4>
+		<br>
+		<div class="buttons">
+			<div *ngIf="check">
+				<button class="btn btn-primary" (click)="UpdateLikes(pet._id)">Like</button>
+			</div>
+			<button class="btn btn-success" (click)="Adopt(pet._id)">Adopt this Pet!</button>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,44 @@
+
+table, th, td{
+	border: 1px solid black;
+	text-align: center;
+}
+
+
+td, th{
+	padding: 3px;
+	width: 100px;
+	height: 50px;
+	vertical-align: middle;
+}
+
+.btn-link{
+	text-decoration-line: underline;
+}
+
+
+.btn-primary{
+	margin: 5px;
+	width:100px;
+}
+
+.btn-secondary{
+	margin: 5px;
+	width:100px;
+}
+
+.wrapper{
+	padding:30px;
+}
+
+.table_header{
+	background-color: grey; 
+	color: white; 
+	border: 1px solid black;
+	vertical-align: middle;
+}
+
+.jumbotron{
+	margin-bottom: 0px;
+	padding: 30px 10px 30px 10px;
+}

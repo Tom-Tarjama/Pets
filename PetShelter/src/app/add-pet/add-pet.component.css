@@ -1,0 +1,33 @@
+
+.wrapper{
+	padding:30px;
+}
+
+.jumbotron{
+	margin-bottom: 0px;
+	padding: 30px 10px 30px 10px;
+}
+
+td{
+	margin: 5px;
+}
+
+.messages{
+	color: purple;
+	text-indent: 20px;
+}
+
+.form-control{
+	width: 400px;
+}
+
+button{
+	margin: 10px;
+}
+
+.form-group{
+	width: 500px;
+	border: 1px solid grey;
+	border-radius: 5px;
+	padding: 30px;
+}

@@ -1,0 +1,55 @@
+<div class="wrapper">
+	<div class="jumbotron">
+		<h1 class="display-4">Pet Shelter</h1>
+	</div>
+	<br>
+	<div class="header">
+		<h4 id="header_1" class="lead">Edit pet's profile</h4>
+		<a id="header_2" class="btn btn-link" [routerLink]="['/home']">Home</a>
+	</div>
+
+	<div class = "messages" *ngIf= "!nameValidation.valid">
+			<p> -Your pet name must be at least 3 characters</p>
+	</div>
+	<div class = "messages" *ngIf= "!typeValidation.valid">
+			<p> -Your pet type must be at least 3 characters</p>
+	</div>
+	<div class = "messages" *ngIf= "!descValidation.valid">
+			<p> -Your pet description must be at least 3 characters</p>
+	</div>
+		<form (submit) ="UpdatePet(pet._id)">
+			<div class="form-group">
+				<tr><td>Pet Name:</td></tr>
+				<tr>
+					<td><input class="form-control" type="text" [(ngModel)]="pet.name" name="name" require minlength="3" #nameValidation="ngModel"></td>
+				</tr>
+				<br>
+				<tr><td>Pet Type:</td></tr>
+				<tr>
+					<td><input class="form-control" type="text" [(ngModel)]="pet.type" name="type" require minlength="3" #typeValidation="ngModel"></td>
+				</tr>
+				<br>
+				<tr><td>Description:</td></tr>
+				<tr>
+					<td><textarea class="form-control" type="text" [(ngModel)]="pet.description" name="description" require minlength="3" #descValidation="ngModel"></textarea></td>
+				</tr>
+				<br>
+				<tr><td>Skills</td></tr>
+				<br>
+				<tr>
+					<td>Skill 1:<input class="form-control" type="text" [(ngModel)]="pet.skill_1" name="skill_1"></td>
+				</tr>
+				<tr>
+					<td>Skill 2:<input class="form-control" type="text" [(ngModel)]="pet.skill_2" name="skill_2"></td>
+				</tr>
+				<tr>
+					<td>Skill 3:<input class="form-control" type="text" [(ngModel)]="pet.skill_3" name="skill_3"></td>
+				</tr>
+				<br>
+				<tr>
+					<input class="btn btn-primary" type="submit" value="Edit Pet Profile">
+					<button class="btn btn-secondary" [routerLink]="['/home']">Cancel</button>
+				</tr>
+			</div>
+		</form>
+</div>

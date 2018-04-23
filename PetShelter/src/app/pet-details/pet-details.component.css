@@ -1,0 +1,50 @@
+.wrapper{
+	padding:30px;
+}
+
+.header{
+	width: 500px;
+}
+
+#header_1{
+	display: inline-block;
+}
+
+#header_2{
+	display: inline-block;
+	float: right;
+	padding: 0px;
+	margin-bottom: .5rem;
+	text-decoration-line: underline;
+}
+
+.rounded{
+	width: 500px;
+	border: 1px solid grey;
+	border-radius: 5px;
+	padding: 30px;
+}
+
+.jumbotron{
+	margin-bottom: 0px;
+	padding: 30px 10px 30px 10px;
+}
+
+.buttons{
+	display: flex;
+}
+
+.btn-primary{
+	margin: 5px;
+	width:100px;
+}
+
+.btn-success{
+	margin: 5px;
+	width:150px;
+}
+
+.btn-dark{
+	margin: 5px;
+	width:150px;
+}

@@ -1,0 +1,59 @@
+<div class= wrapper>
+	
+	<div class="jumbotron">
+		<h1 class="display-4">Pet Shelter</h1>
+		<h4 class="lead">Know a pet in need of a home?</h4>
+		<br>
+			<div class = "messages" *ngIf= "!nameValidation.valid || nameValidation.pristine">
+				<p> -Your pet name must be at least 3 characters</p>
+		</div>
+		<div class = "messages" *ngIf= "!typeValidation.valid || typeValidation.pristine">
+				<p> -Your pet type must be at least 3 characters</p>
+		</div>
+		<div class = "messages" *ngIf= "!descValidation.valid || descValidation.pristine">
+				<p> -Your pet description must be at least 3 characters</p>
+		</div>
+		<div class = "messages" *ngIf= "messages ==='Error: A pet of that name already exists'">
+				<p> -A pet of that name already exists</p>
+		</div>
+	</div>
+	<br>
+		<form (submit)="addOne()">
+			<div class="form-group">
+				<table>
+					<tr><td>Pet Name:</td></tr>
+					<tr>
+						<td><input class="form-control" type="text" [(ngModel)]="newPet.name" name="name" require minlength="3" #nameValidation="ngModel"></td>
+					</tr>
+					<br>
+					<tr><td>Pet Type:</td></tr>
+					<tr>
+						<td><input class="form-control" type="text" [(ngModel)]="newPet.type" name="type" require minlength="3" #typeValidation="ngModel"></td>
+					</tr>
+					<br>
+					<tr><td>Description:</td></tr>
+					<tr>
+						<td><textarea class="form-control" type="text" [(ngModel)]="newPet.description" name="description" require minlength="3" #descValidation="ngModel"></textarea></td>
+					</tr>
+					<br>
+					<tr><td>Skills</td></tr>
+					<br>
+					<tr>
+						<td>Skill 1:<input class="form-control" type="text" [(ngModel)]="newPet.skill_1" name="skill_1"></td>
+					</tr>
+					<br>
+					<tr>
+						<td>Skill 2:<input class="form-control" type="text" [(ngModel)]="newPet.skill_2" name="skill_2"></td>
+					</tr>
+					<br>
+					<tr>
+						<td>Skill 3:<input class="form-control" type="text" [(ngModel)]="newPet.skill_3" name="skill_3"></td>
+					</tr>
+					<br>
+					<tr>
+						<td><input class="btn btn-primary" type="submit" value="Add Pet"><button class="btn btn-secondary" [routerLink]="['/home']">Cancel</button></td>
+					</tr>
+				</table>
+			</div>
+		</form>
+</div>
